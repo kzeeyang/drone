@@ -1,12 +1,7 @@
 kind: pipeline
 name: default
-
 steps:
-- name: golang
-  image: golang:alpine
+- name: info
+  image: busybox
   commands:
-  - echo $$KEY
-  - pwd
-  - ls
-  - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
-  - ./app
+  - echo "appdemo"
