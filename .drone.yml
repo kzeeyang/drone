@@ -1,7 +1,9 @@
 kind: pipeline
 name: default
+
 steps:
-- name: info
-  image: busybox
+- name: backend
+  image: golang
   commands:
-  - echo "appdemo"
+  - go build
+  - go test
