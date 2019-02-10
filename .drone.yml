@@ -8,3 +8,11 @@ steps:
   - ls
   - go build -o app .
   - ./app
+  - echo -n "0.1" > .tags
+
+- name: docker
+  image: plugins/docker
+  settings:
+    username: kzeeyang
+    password: kong519627
+    repo: test
