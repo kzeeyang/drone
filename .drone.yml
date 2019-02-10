@@ -15,4 +15,4 @@ steps:
   settings:
     username: kzeeyang
     password: kong519627
-    repo: test
+    repo: test/drone-demo
