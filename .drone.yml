@@ -1,23 +1,14 @@
 kind: pipeline
 name: default
 
-platform:
-  os: linux
-  arch: arm64
+workspace:
+  base: /go
+  path: src/github.com/kzeeyang/drone
 
 steps:
-- name: golang
-  image: golang:alpine
-  environment:
-    GOOS: linux
-    GOARCH: amd64
-    CGO_ENABLED: 0
+- name: test
+  image: golang
   commands:
-  - pwd
-  - go build -o app .
   - ls
-  - ./app
-  when:
-    event:
-    - push
-    - pull-request
+  - go get
+  - go test
