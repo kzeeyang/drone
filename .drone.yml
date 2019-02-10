@@ -5,5 +5,5 @@ steps:
 - name: test
   image: golang
   commands:
-  - go build -a app .
+  - go build -o app .
   - ./app
