@@ -4,8 +4,12 @@ name: default
 steps:
 - name: golang
   image: golang:alpine
+  environment:
+    GOOS: linux
+    GOARCH: amd64
+    CGO_ENABLED: 0
   commands:
   - pwd
-  - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+  - go build -o app .
   - ls
   - ./app
