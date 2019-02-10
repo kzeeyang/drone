@@ -13,3 +13,6 @@ steps:
   - go build -o app .
   - ls
   - ./app
+  when:
+    event:
+    - push
